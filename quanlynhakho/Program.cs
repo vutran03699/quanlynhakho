@@ -1,4 +1,5 @@
-﻿using quanlynhakho.Views;
+﻿using quanlynhakho.Usercontrols;
+using quanlynhakho.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;

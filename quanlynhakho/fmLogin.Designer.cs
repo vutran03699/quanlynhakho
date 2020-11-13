@@ -50,6 +50,7 @@
             this.txtTaiKhoan.Size = new System.Drawing.Size(185, 20);
             this.txtTaiKhoan.TabIndex = 0;
             this.txtTaiKhoan.EditValueChanged += new System.EventHandler(this.txtTaiKhoan_EditValueChanged);
+            this.txtTaiKhoan.Click += new System.EventHandler(this.txtTaiKhoan_Click);
             // 
             // label1
             // 
@@ -73,7 +74,7 @@
             // txtMatKhau
             // 
             this.txtMatKhau.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.False;
-            this.txtMatKhau.EditValue = "admin";
+            this.txtMatKhau.EditValue = "111";
             this.txtMatKhau.Location = new System.Drawing.Point(110, 86);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Properties.UseSystemPasswordChar = true;
@@ -81,6 +82,7 @@
             this.txtMatKhau.Size = new System.Drawing.Size(185, 20);
             this.txtMatKhau.TabIndex = 1;
             this.txtMatKhau.EditValueChanged += new System.EventHandler(this.txtMatKhau_EditValueChanged);
+            this.txtMatKhau.Click += new System.EventHandler(this.txtMatKhau_Click);
             // 
             // label3
             // 

@@ -1,7 +1,6 @@
-﻿
-namespace quanlynhakho.Usercontrols
+﻿namespace quanlynhakho.Usercontrols
 {
-    partial class ucNhapKho
+    partial class ucTonKho
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,13 +28,15 @@ namespace quanlynhakho.Usercontrols
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dtgNhapKho = new System.Windows.Forms.DataGridView();
+            this.txtTimKiem = new DevExpress.XtraEditors.TextEdit();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboDonVi = new System.Windows.Forms.ComboBox();
             this.comboLoai = new System.Windows.Forms.ComboBox();
             this.btnXoaDuLieuNhap = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
             this.txtGiaBan = new DevExpress.XtraEditors.TextEdit();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -49,22 +50,41 @@ namespace quanlynhakho.Usercontrols
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.labelTimKiem = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.dtgNhapKho = new System.Windows.Forms.DataGridView();
-            this.txtTimKiem = new DevExpress.XtraEditors.TextEdit();
-            this.dateEditNhapKho = new DevExpress.XtraEditors.DateEdit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgNhapKho)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTimKiem.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtGiaBan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGiaNhap.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoLuong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenSp.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgNhapKho)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTimKiem.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEditNhapKho.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEditNhapKho.Properties)).BeginInit();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dtgNhapKho);
+            this.panel1.Location = new System.Drawing.Point(326, 56);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(677, 289);
+            this.panel1.TabIndex = 18;
+            // 
+            // dtgNhapKho
+            // 
+            this.dtgNhapKho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgNhapKho.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgNhapKho.Location = new System.Drawing.Point(0, 0);
+            this.dtgNhapKho.Name = "dtgNhapKho";
+            this.dtgNhapKho.ReadOnly = true;
+            this.dtgNhapKho.Size = new System.Drawing.Size(677, 289);
+            this.dtgNhapKho.TabIndex = 0;
+            // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Location = new System.Drawing.Point(326, 27);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(205, 20);
+            this.txtTimKiem.TabIndex = 19;
             // 
             // groupBox1
             // 
@@ -73,7 +93,6 @@ namespace quanlynhakho.Usercontrols
             this.groupBox1.Controls.Add(this.btnXoaDuLieuNhap);
             this.groupBox1.Controls.Add(this.btnXoa);
             this.groupBox1.Controls.Add(this.btnLuu);
-            this.groupBox1.Controls.Add(this.btnThem);
             this.groupBox1.Controls.Add(this.txtGiaBan);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -86,12 +105,11 @@ namespace quanlynhakho.Usercontrols
             this.groupBox1.Controls.Add(this.txtId);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(8, 7);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(312, 338);
-            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Nhập thông tin";
             // 
             // comboDonVi
             // 
@@ -117,37 +135,24 @@ namespace quanlynhakho.Usercontrols
             this.btnXoaDuLieuNhap.TabIndex = 12;
             this.btnXoaDuLieuNhap.Text = "Clear";
             this.btnXoaDuLieuNhap.UseVisualStyleBackColor = true;
-            this.btnXoaDuLieuNhap.Click += new System.EventHandler(this.btnXoaDuLieuNhap_Click);
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(144, 210);
+            this.btnXoa.Location = new System.Drawing.Point(112, 210);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(58, 30);
             this.btnXoa.TabIndex = 11;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(80, 210);
+            this.btnLuu.Location = new System.Drawing.Point(12, 210);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(58, 30);
             this.btnLuu.TabIndex = 10;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // btnThem
-            // 
-            this.btnThem.Location = new System.Drawing.Point(16, 210);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(58, 30);
-            this.btnThem.TabIndex = 9;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // txtGiaBan
             // 
@@ -257,65 +262,25 @@ namespace quanlynhakho.Usercontrols
             // labelTimKiem
             // 
             this.labelTimKiem.AutoSize = true;
-            this.labelTimKiem.Location = new System.Drawing.Point(533, 27);
+            this.labelTimKiem.Location = new System.Drawing.Point(537, 30);
             this.labelTimKiem.Name = "labelTimKiem";
             this.labelTimKiem.Size = new System.Drawing.Size(48, 13);
-            this.labelTimKiem.TabIndex = 0;
+            this.labelTimKiem.TabIndex = 16;
             this.labelTimKiem.Text = "Tìm Kiếm";
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.dtgNhapKho);
-            this.panel1.Location = new System.Drawing.Point(322, 53);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(677, 289);
-            this.panel1.TabIndex = 2;
-            // 
-            // dtgNhapKho
-            // 
-            this.dtgNhapKho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgNhapKho.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgNhapKho.Location = new System.Drawing.Point(0, 0);
-            this.dtgNhapKho.Name = "dtgNhapKho";
-            this.dtgNhapKho.ReadOnly = true;
-            this.dtgNhapKho.Size = new System.Drawing.Size(677, 289);
-            this.dtgNhapKho.TabIndex = 0;
-            this.dtgNhapKho.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgNhapKho_CellContentClick);
-            this.dtgNhapKho.DoubleClick += new System.EventHandler(this.dtgNhapKho_DoubleClick);
-            // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.Location = new System.Drawing.Point(322, 24);
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(205, 20);
-            this.txtTimKiem.TabIndex = 14;
-            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
-            // 
-            // dateEditNhapKho
-            // 
-            this.dateEditNhapKho.EditValue = null;
-            this.dateEditNhapKho.Location = new System.Drawing.Point(820, 24);
-            this.dateEditNhapKho.Name = "dateEditNhapKho";
-            this.dateEditNhapKho.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEditNhapKho.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEditNhapKho.Size = new System.Drawing.Size(144, 20);
-            this.dateEditNhapKho.TabIndex = 15;
-            // 
-            // ucNhapKho
+            // ucTon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.Controls.Add(this.dateEditNhapKho);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.labelTimKiem);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "ucNhapKho";
+            this.Name = "ucTon";
             this.Size = new System.Drawing.Size(1010, 353);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgNhapKho)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTimKiem.Properties)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtGiaBan.Properties)).EndInit();
@@ -323,11 +288,6 @@ namespace quanlynhakho.Usercontrols
             ((System.ComponentModel.ISupportInitialize)(this.txtSoLuong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenSp.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).EndInit();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgNhapKho)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTimKiem.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEditNhapKho.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEditNhapKho.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -335,8 +295,17 @@ namespace quanlynhakho.Usercontrols
 
         #endregion
 
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dtgNhapKho;
+        private DevExpress.XtraEditors.TextEdit txtTimKiem;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox comboDonVi;
+        private System.Windows.Forms.ComboBox comboLoai;
+        private System.Windows.Forms.Button btnXoaDuLieuNhap;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnLuu;
         private DevExpress.XtraEditors.TextEdit txtGiaBan;
+        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private DevExpress.XtraEditors.TextEdit txtGiaNhap;
         private System.Windows.Forms.Label label5;
@@ -348,16 +317,5 @@ namespace quanlynhakho.Usercontrols
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelTimKiem;
-        private DevExpress.XtraEditors.TextEdit txtTimKiem;
-        private System.Windows.Forms.Button btnXoaDuLieuNhap;
-        private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnLuu;
-        private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox comboDonVi;
-        private System.Windows.Forms.ComboBox comboLoai;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridView dtgNhapKho;
-        private DevExpress.XtraEditors.DateEdit dateEditNhapKho;
     }
 }

@@ -25,14 +25,14 @@ namespace quanlynhakho
 
         void autoloadThongKe()
         {
-            XtraTabControl tab = xtbc;
-            XtraTabPage page = new XtraTabPage();
-            tab.TabPages.Add(page);
-            tab.SelectedTabPage = page;
-            Usercontrols.ucThongKe uc = new Usercontrols.ucThongKe();
-            page.Controls.Add(uc);
-            page.Text = "Thống kê";
-            uc.Dock = DockStyle.Fill;
+            //XtraTabControl tab = xtbc;
+            //XtraTabPage page = new XtraTabPage();
+            //tab.TabPages.Add(page);
+            //tab.SelectedTabPage = page;
+            ////Usercontrols.ucThongKe uc = new Usercontrols.ucThongKe();
+            //page.Controls.Add(uc);
+            //page.Text = "Thống kê";
+            //uc.Dock = DockStyle.Fill;
             
         }
         
@@ -98,6 +98,31 @@ namespace quanlynhakho
         private void xtbc_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnTonKho_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+            XtraTabControl tab = xtbc;
+            XtraTabPage page = new XtraTabPage();
+            tab.TabPages.Add(page);
+            tab.SelectedTabPage = page;
+            Usercontrols.ucTonKho uc = new Usercontrols.ucTonKho();
+            page.Controls.Add(uc);
+            page.Text = "Tồn Kho";
+            uc.Dock = DockStyle.Fill;
+        }
+
+        private void btnDonVi_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            XtraTabControl tab = xtbc;
+            XtraTabPage page = new XtraTabPage();
+            tab.TabPages.Add(page);
+            tab.SelectedTabPage = page;
+            Usercontrols.ucDonvi uc = new Usercontrols.ucDonvi();
+            page.Controls.Add(uc);
+            page.Text = "Đơn Vị";
+            uc.Dock = DockStyle.Fill;
         }
     }
 }

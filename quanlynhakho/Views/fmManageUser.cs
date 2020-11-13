@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Data.SqlClient;
-using quanlynhakho.DAO;
+
 
 namespace quanlynhakho.Views
 {
@@ -27,9 +27,9 @@ namespace quanlynhakho.Views
 
             //string qr = "select * from [dbo].[USERS]";
          
-            string query = "exec dbo.USP_GetAccountByUserName @Username";
+         //   string query = "exec dbo.USP_GetAccountByUserName @Username";
            
-            dtgvAccount.DataSource = DataProvider.Instance.ExecuteQuery(query,new object[] { "admin" });
+            //dtgvAccount.DataSource = DataProvider.Instance.ExecuteQuery(query,new object[] { "admin" });
         }
     }
 }

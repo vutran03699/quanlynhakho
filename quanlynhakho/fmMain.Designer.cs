@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmMain));
-            DevExpress.XtraBars.Ribbon.ReduceOperation reduceOperation2 = new DevExpress.XtraBars.Ribbon.ReduceOperation();
+            DevExpress.XtraBars.Ribbon.ReduceOperation reduceOperation1 = new DevExpress.XtraBars.Ribbon.ReduceOperation();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnQuanLyTaiKhoan = new DevExpress.XtraBars.BarButtonItem();
             this.btnXuatHang = new DevExpress.XtraBars.BarButtonItem();
@@ -77,7 +77,8 @@
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage2});
-            this.ribbon.Size = new System.Drawing.Size(1015, 158);
+            this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
+            this.ribbon.Size = new System.Drawing.Size(1015, 89);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // btnQuanLyTaiKhoan
@@ -103,6 +104,7 @@
             this.btnTonKho.Id = 29;
             this.btnTonKho.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTonKho.ImageOptions.SvgImage")));
             this.btnTonKho.Name = "btnTonKho";
+            this.btnTonKho.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTonKho_ItemClick);
             // 
             // btnDonVi
             // 
@@ -110,6 +112,7 @@
             this.btnDonVi.Id = 32;
             this.btnDonVi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDonVi.ImageOptions.SvgImage")));
             this.btnDonVi.Name = "btnDonVi";
+            this.btnDonVi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDonVi_ItemClick);
             // 
             // btnNhapHang
             // 
@@ -146,12 +149,12 @@
             this.ribbonPageGroup2,
             this.ribbonPageGroup3});
             this.ribbonPage1.Name = "ribbonPage1";
-            reduceOperation2.Behavior = DevExpress.XtraBars.Ribbon.ReduceOperationBehavior.Single;
-            reduceOperation2.GroupName = null;
-            reduceOperation2.ItemLinkIndex = 0;
-            reduceOperation2.ItemLinksCount = 0;
-            reduceOperation2.Operation = DevExpress.XtraBars.Ribbon.ReduceOperationType.ButtonGroups;
-            this.ribbonPage1.ReduceOperations.Add(reduceOperation2);
+            reduceOperation1.Behavior = DevExpress.XtraBars.Ribbon.ReduceOperationBehavior.Single;
+            reduceOperation1.GroupName = null;
+            reduceOperation1.ItemLinkIndex = 0;
+            reduceOperation1.ItemLinksCount = 0;
+            reduceOperation1.Operation = DevExpress.XtraBars.Ribbon.ReduceOperationType.ButtonGroups;
+            this.ribbonPage1.ReduceOperations.Add(reduceOperation1);
             this.ribbonPage1.Text = "Home";
             // 
             // ribbonPageGroup1
@@ -201,10 +204,10 @@
             // xtbc
             // 
             this.xtbc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtbc.Location = new System.Drawing.Point(0, 158);
+            this.xtbc.Location = new System.Drawing.Point(0, 89);
             this.xtbc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xtbc.Name = "xtbc";
-            this.xtbc.Size = new System.Drawing.Size(1015, 311);
+            this.xtbc.Size = new System.Drawing.Size(1015, 380);
             this.xtbc.TabIndex = 9;
             this.xtbc.Click += new System.EventHandler(this.xtbc_Click);
             // 

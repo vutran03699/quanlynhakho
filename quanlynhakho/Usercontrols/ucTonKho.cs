@@ -13,11 +13,11 @@ using System.IO;
 
 namespace quanlynhakho.Usercontrols
 {
-    public partial class ucNhapKho : DevExpress.XtraEditors.XtraUserControl
+    public partial class ucTonKho : DevExpress.XtraEditors.XtraUserControl
     {
         // SqlConnection connect = new SqlConnection(@"data source=DESKTOP-O6D11FL;initial catalog=QuanLyKho;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
         SqlConnection connect = ClassKetNoi.connect;
-        //  SqlCommand command;
+     //   SqlCommand command;
         // string imgloc;
         //đẩy sp lên bảng
         public void GridViewSp()
@@ -28,7 +28,7 @@ namespace quanlynhakho.Usercontrols
             sqldatasp.Fill(databsp);
             dtgNhapKho.DataSource = databsp;
             connect.Close();
-            
+
 
         }
         public void clearSp()
@@ -36,15 +36,15 @@ namespace quanlynhakho.Usercontrols
             txtId.Text = string.Empty;
             txtTenSp.Text = string.Empty;
             txtSoLuong.Text = string.Empty;
-            txtGiaBan.Text= string.Empty;
+            txtGiaBan.Text = string.Empty;
             txtGiaNhap.Text = string.Empty;
             comboLoai.Text = string.Empty;
             comboDonVi.Text = string.Empty;
-     //       pictureBoxIMG.Image = null;
+            //       pictureBoxIMG.Image = null;
 
 
         }
-        public ucNhapKho()
+        public ucTonKho()
         {
             InitializeComponent();
 
@@ -57,7 +57,7 @@ namespace quanlynhakho.Usercontrols
             string querydonvi = @"select * from donvisp";
 
             //đổ dữ liệu vào dataset
-            SqlDataAdapter sqldataloai = new SqlDataAdapter(queryloai,connect);
+            SqlDataAdapter sqldataloai = new SqlDataAdapter(queryloai, connect);
             SqlDataAdapter sqldayadonvi = new SqlDataAdapter(querydonvi, connect);
 
             DataTable dataloai = new DataTable();
@@ -69,9 +69,9 @@ namespace quanlynhakho.Usercontrols
             //combobox
             comboLoai.Items.Clear();
             comboDonVi.Items.Clear();
-           
+
             // chạy vòng lặp add loại vs dơn vị vào
-            foreach(DataRow dr in dataloai.Rows)
+            foreach (DataRow dr in dataloai.Rows)
             {
                 comboLoai.Items.Add(dr["TenLoai"].ToString());
             }
@@ -90,7 +90,8 @@ namespace quanlynhakho.Usercontrols
             {
                 MessageBox.Show("Trống mã sản phẩm ");
                 txtId.Select();
-            }else if(string.IsNullOrWhiteSpace(txtTenSp.Text))
+            }
+            else if (string.IsNullOrWhiteSpace(txtTenSp.Text))
             {
                 MessageBox.Show("Trống Tên ");
                 txtTenSp.Select();
@@ -120,11 +121,43 @@ namespace quanlynhakho.Usercontrols
                 MessageBox.Show("Chưa chọn đơn vị ");
                 comboDonVi.Select();
             }
-            
-        
+
+
 
             else
             {
+
+                //byte[] img = null;
+                //FileStream fs = new FileStream(imgloc, FileMode.Open, FileAccess.Read);
+                //BinaryReader br = new BinaryReader(fs);
+                //img = br.ReadBytes((int)fs.Length);
+                // nhap kho =================
+                //using (var cmd = new SqlCommand("INSERT INTO nhapkho (masp,tensp,soluongsp,gianhapsp,giabansp,loaisp,donvisp,ngaynhapkho,nvnhapkho) VALUES (@masp,@tensp,@soluongsp,@gianhapsp, @giabansp,@loaisp,@donvisp,@ngaynhapkho,@nvnhapkho)"))
+                //{
+                //    cmd.Connection = connect;
+                //    cmd.Parameters.AddWithValue("@masp", txtId.Text);
+                //  //  cmd.Parameters.AddWithValue("@anhsp", img);
+                //    cmd.Parameters.AddWithValue("@tensp", txtTenSp.Text);
+                //    cmd.Parameters.AddWithValue("@soluongsp",txtSoLuong.Text);
+                //    cmd.Parameters.AddWithValue("@gianhapsp", txtGiaNhap.Text);
+                //    cmd.Parameters.AddWithValue("@giabansp", txtGiaBan.Text);
+                //    cmd.Parameters.AddWithValue("@loaisp", comboLoai.Text);
+                //    cmd.Parameters.AddWithValue("@donvisp", comboDonVi.Text);
+                //    cmd.Parameters.AddWithValue("@ngaynhapkho", DateTime.Now);
+                //    cmd.Parameters.AddWithValue("@nvnhapkho", fmLogin.usernv);
+                //    connect.Open();
+                //    if(cmd.ExecuteNonQuery() >0)
+                //    {
+                //        MessageBox.Show("Đã thêm");
+                //        connect.Close();
+                //    }
+                //    else
+                //    {
+                //        MessageBox.Show("Không thành công");
+                //        connect.Close();
+                //    }
+
+                //};
 
                 string queryadd = "INSERT INTO nhapkho (masp,tensp,soluongsp,gianhapsp,giabansp,loaisp,donvisp,ngaynhapkho,nvnhapkho) VALUES (@masp,@tensp,@soluongsp,@gianhapsp, @giabansp,@loaisp,@donvisp,@ngaynhapkho,@nvnhapkho)";
                 SqlCommand cmd = new SqlCommand(queryadd, connect);
@@ -155,7 +188,7 @@ namespace quanlynhakho.Usercontrols
 
         private void dtgNhapKho_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-         
+
         }
 
         private void btnXoaDuLieuNhap_Click(object sender, EventArgs e)
@@ -188,8 +221,8 @@ namespace quanlynhakho.Usercontrols
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-           
-             if (string.IsNullOrWhiteSpace(txtId.Text))
+
+            if (string.IsNullOrWhiteSpace(txtId.Text))
             {
                 MessageBox.Show("Thông Tin Trống!");
             }
@@ -220,7 +253,7 @@ namespace quanlynhakho.Usercontrols
 
                     };
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show("error" + ex.Message);
                 }
@@ -245,11 +278,11 @@ namespace quanlynhakho.Usercontrols
                     dtgNhapKho.DataSource = dtTimKiem;
                 }
                 connect.Close();
-                if(dtgNhapKho.Rows.Count > 1 && dtgNhapKho.Rows != null)
+                if (dtgNhapKho.Rows.Count > 1 && dtgNhapKho.Rows != null)
                 {
                     labelTimKiem.Text = "Đã tìm thấy";
                 }
-               else
+                else
                 {
                     labelTimKiem.Text = "Không Tìm Kiếm";
                 }
@@ -259,7 +292,7 @@ namespace quanlynhakho.Usercontrols
                 }
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 connect.Close();
                 MessageBox.Show("Error " + ex.Message);
@@ -301,14 +334,14 @@ namespace quanlynhakho.Usercontrols
                     }
                     GridViewSp();
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     connect.Close();
                     MessageBox.Show("Error " + ex.Message);
 
                 }
             }
-         
+
 
         }
 

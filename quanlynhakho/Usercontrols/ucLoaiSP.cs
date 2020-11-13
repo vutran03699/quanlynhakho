@@ -11,9 +11,9 @@ using DevExpress.XtraEditors;
 
 namespace quanlynhakho.Usercontrols
 {
-    public partial class ucXuatHang : DevExpress.XtraEditors.XtraUserControl
+    public partial class ucLoaiSP : DevExpress.XtraEditors.XtraUserControl
     {
-        public ucXuatHang()
+        public ucLoaiSP()
         {
             InitializeComponent();
         }
