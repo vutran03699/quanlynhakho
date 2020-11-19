@@ -17,6 +17,8 @@ namespace quanlynhakho.Usercontrols
     {
         // SqlConnection connect = new SqlConnection(@"data source=DESKTOP-O6D11FL;initial catalog=QuanLyKho;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
         SqlConnection connect = ClassKetNoi.connect;
+        internal static int SelectedTabPageIndex;
+
         //  SqlCommand command;
         // string imgloc;
         //đẩy sp lên bảng
@@ -326,6 +328,11 @@ namespace quanlynhakho.Usercontrols
                 comboLoai.Text = dtgNhapKho.CurrentRow.Cells[5].Value.ToString();
                 comboDonVi.Text = dtgNhapKho.CurrentRow.Cells[6].Value.ToString();
             }
+
+        }
+
+        private void dateEditNhapKho_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

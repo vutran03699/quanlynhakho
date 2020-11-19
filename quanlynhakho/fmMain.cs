@@ -11,17 +11,50 @@ using DevExpress.XtraBars;
 using quanlynhakho.Views;
 using DevExpress.XtraTab;
 using quanlynhakho.Usercontrols;
+using DevExpress.XtraTab.ViewInfo;
+using DevExpress.XtraEditors;
 
 namespace quanlynhakho
 {
     public partial class fmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        //bool flag = false;
+        private static XtraTabControl tabstatic;
+
         public fmMain()
         {
             InitializeComponent();
             autoloadThongKe();
+         //   tabstatic = tabControl;
+
         }
+
+        //#region Kiểm tra TabPabPage có tồn tại không
+        //public static bool KiemTraTabPage(string Ten)
+        //{
+        //    bool ok = false;
+        //    foreach (XtraTabPage tabpage in tabstatic.TabPages)
+        //    {
+        //        if (tabpage.Text == Ten)
+        //        {
+        //            return ok = true;
+        //        }
+        //    }
+        //    return ok;
+        //}
+        //#region Tìm vị trí TabPage
+        //public static int ViTriTabPage(string Ten)
+        //{
+        //    int vitri = 0;
+        //    for (int i = 0; i < tabstatic.TabPages.Count; i++)
+        //    {
+        //        if (tabstatic.TabPages[i].Text == Ten)
+        //            vitri = i;
+        //    }
+        //    return vitri;
+        //}
+
+
+
 
         void autoloadThongKe()
         {
@@ -36,6 +69,17 @@ namespace quanlynhakho
             
         }
         
+        //private bool ExitFrom(XtraForm from)
+        //{
+        //    foreach (var child in MiChild)
+        //    {
+        //        if (child.Name == from.Name)
+        //        {
+        //            child.Activate();
+        //            return true;
+        //        }
+        //    }
+        //}
 
         private void btnNhapHang_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -50,7 +94,7 @@ namespace quanlynhakho
 
         private void btnNhapHang_ItemClick_1(object sender, ItemClickEventArgs e)
         {
-         
+
             XtraTabControl tab = xtbc;
             XtraTabPage page = new XtraTabPage();
             tab.TabPages.Add(page);
@@ -59,7 +103,8 @@ namespace quanlynhakho
             page.Controls.Add(uc);
             page.Text = "Nhập Kho";
             uc.Dock = DockStyle.Fill;
-
+            //ucNhapKho.SelectedTabPageIndex = 0;
+            page.PageVisible = !page.PageVisible;
         }
 
         private void btnTest_ItemClick(object sender, ItemClickEventArgs e)
@@ -89,10 +134,16 @@ namespace quanlynhakho
 
         private void btnXuatHang_ItemClick(object sender, ItemClickEventArgs e)
         {
-            //ucXuatHang xuathang = new ucXuatHang();
-            fmLogin login = new fmLogin();
-            login.MdiParent = this;
-            login.Show();
+            XtraTabControl tab = xtbc;
+            XtraTabPage page = new XtraTabPage();
+            tab.TabPages.Add(page);
+            tab.SelectedTabPage = page;
+            Usercontrols.ucXuatKho uc = new Usercontrols.ucXuatKho();
+            page.Controls.Add(uc);
+            page.Text = "Xuất Kho";
+            uc.Dock = DockStyle.Fill;
+
+           // page.PageVisible = !page.PageVisible;
         }
 
         private void xtbc_Click(object sender, EventArgs e)
@@ -124,5 +175,22 @@ namespace quanlynhakho
             page.Text = "Đơn Vị";
             uc.Dock = DockStyle.Fill;
         }
+
+        private void btnLoai_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            int t= 0;
+            XtraTabControl tab = xtbc;
+            XtraTabPage page = new XtraTabPage();
+            tab.TabPages.Add(page);
+            tab.SelectedTabPage = page;
+            Usercontrols. ucLoaiSP uc = new Usercontrols.ucLoaiSP();
+            page.Controls.Add(uc);
+            page.Text = "Đơn Vị";
+            uc.Dock = DockStyle.Fill;
+            
+
+
+        }
+
     }
 }

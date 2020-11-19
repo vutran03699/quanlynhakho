@@ -87,5 +87,19 @@ namespace quanlynhakho
           
 
         }
+
+        private void fmLogin_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+            this.KeyDown += fmLogin_KeyDown;
+        }
+
+        private void fmLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                simpleButton1_Click(sender, e);
+            }
+        }
     }
 }

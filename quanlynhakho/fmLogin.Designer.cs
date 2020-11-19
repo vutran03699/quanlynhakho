@@ -138,6 +138,8 @@
             this.Name = "fmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.fmLogin_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fmLogin_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.txtTaiKhoan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMatKhau.Properties)).EndInit();
             this.groupBox1.ResumeLayout(false);

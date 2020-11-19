@@ -302,6 +302,7 @@ namespace quanlynhakho.Usercontrols
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEditNhapKho.Size = new System.Drawing.Size(144, 20);
             this.dateEditNhapKho.TabIndex = 15;
+            this.dateEditNhapKho.TextChanged += new System.EventHandler(this.dateEditNhapKho_TextChanged);
             // 
             // ucNhapKho
             // 
