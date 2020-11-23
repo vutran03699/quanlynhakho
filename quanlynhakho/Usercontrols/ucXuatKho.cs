@@ -9,9 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Data.SqlClient;
-
-
-
+using System.Drawing.Printing;
 
 namespace quanlynhakho.Usercontrols
 {
@@ -39,8 +37,8 @@ namespace quanlynhakho.Usercontrols
         public static string DonVi = "";
         public static string SDT = "";
         public static string TenKH = "";
-       
-        
+
+
 
         // kiem trs sl san pham
         int checklsp;
@@ -190,9 +188,124 @@ namespace quanlynhakho.Usercontrols
         private void btnXuatKho_Click(object sender, EventArgs e)
         {
 
-        }
+            //string IDhoadon = txtsohd.Text;
+            //string PXmasp = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            //string PXtensp = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            //string PXsl = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            //string PXdongia = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            //string PXDonVi = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            //string PXloai = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            //string PXthanhtien = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            //string PXnhanvienthanhtoan = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+            //string thanhtoan = txttongcongtiensp.Text;
+            //string SDT = txtSdtkh.Text;
+            //string TenKH = txttenkh.Text;
 
-       
+            //try
+            //{
+            //    using (var cmd = new SqlCommand("INSERT INTO HoaDon (HDmasp,HDtensp,HDsl,HDdongia,HDloai,HDthanhtoan,HDdonvi,SDT,TenKH,HDtime,nvthanhtoan) VALUES (@HDmasp,@HDtensp,@HDsl,@HDdongia,@HDloai, @HDthanhtoan,@HDdonvi,@HDno,@SDT,@TenKH,@HDtime,@nvthanhtoan)"))
+            //    {
+            //        cmd.Connection = connect;
+            //        //  cmd.Parameters.AddWithValue("@IDhoadon", BanHang.IDhoadon);
+            //        cmd.Parameters.AddWithValue("@HDmasp", PXmasp);
+            //        cmd.Parameters.AddWithValue("@HDtensp", PXtensp);
+            //        cmd.Parameters.AddWithValue("@HDsl", PXsl);
+            //        cmd.Parameters.AddWithValue("@HDdongia", PXdongia);
+            //        cmd.Parameters.AddWithValue("@HDloai", PXloai);
+            //        cmd.Parameters.AddWithValue("@HDthanhtoan", thanhtoan);//
+
+            //        cmd.Parameters.AddWithValue("@HDdonvi", PXDonVi);
+
+
+            //        cmd.Parameters.AddWithValue("@SDT", SDT);
+            //        cmd.Parameters.AddWithValue("@TenKH", TenKH);
+            //        cmd.Parameters.Add("@HDtime", SqlDbType.DateTime);
+            //        cmd.Parameters["@HDtime"].Value = DateTime.Now;
+            //        cmd.Parameters.AddWithValue("@nvthanhtoan", PXnhanvienthanhtoan);
+            //        connect.Open();
+            //                if (cmd.ExecuteNonQuery() > 0)
+            //                {
+            //            // MessageBox.Show("Đã thêm");
+            //                     connect.Close();
+            //            //            PrintDialog printDialog = new PrintDialog();
+
+            //            //            PrintDocument printDocument = new PrintDocument();
+
+            //            //            printDialog.Document = printDocument; //add the document to the dialog box...        
+
+            //            //            printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CreateReceipt); //add an event handler that will do the printing
+
+            //            //            //on a till you will not want to ask the user where to print but this is fine for the test envoironment.
+
+            //            //            DialogResult result = printDialog.ShowDialog();
+
+            //            //            if (result == DialogResult.OK)
+            //            //            {
+            //            //                printDocument.Print();
+
+            //            //            }
+            //            //            Close();
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show("Thêm không thành công!");
+            //        }
+            //        connect.Close();
+            //    }
+            //        }
+            //        catch (Exception ex)
+            //        {
+            //            connect.Close();
+
+            //            MessageBox.Show("Error during insert: " + ex.Message);
+            //    }
+
+            //------------------------------------------------// pass datadridview to listbox formTT
+            //ListBox listBox1a = new ListBox();
+
+            //foreach (DataGridViewRow item in dataGridView1.Rows)
+            //{
+            //    listBox1a.Items.Add(item.Cells[1].Value.ToString() + '/' + item.Cells[2].Value.ToString() + '/' + item.Cells[3].Value.ToString());
+            //    //--  listBox1a.Items.Add(item.Cells[1].Value.ToString().PadRight(30) + item.Cells[4].Value.ToString());
+            //}
+            ////------------------------------------------------// datagridview masp,tensp,slsp to list
+            ////pass datagridview to listbox: masp,tensp,sl
+            //ListBox listBox3 = new ListBox();
+            //ListBox listBox4 = new ListBox();
+            //ListBox listBox5 = new ListBox();
+            //ListBox listBox6 = new ListBox();
+            //ListBox listBox7 = new ListBox();
+            //ListBox listBox8 = new ListBox();
+            //foreach (DataGridViewRow item in dataGridView1.Rows)
+            //{
+            //    listBox3.Items.Add(item.Cells[0].Value.ToString()).ToString();//masp
+            //    listBox4.Items.Add(item.Cells[1].Value.ToString()).ToString();//tensp
+            //    listBox5.Items.Add(item.Cells[2].Value.ToString()).ToString();//slsp
+            //    listBox6.Items.Add(item.Cells[6].Value.ToString()).ToString();//loai
+            //    listBox7.Items.Add(item.Cells[5].Value.ToString()).ToString();//donvi
+            //    listBox8.Items.Add(item.Cells[3].Value.ToString()).ToString();//dongia
+            //    colmasp = string.Join(",", listBox3.Items.Cast<String>());
+            //    coltensp = string.Join(",", listBox4.Items.Cast<String>());
+            //    colslsp = string.Join(",", listBox5.Items.Cast<String>());
+            //    colloaisp = string.Join(",", listBox6.Items.Cast<String>());
+            //    coldvsp = string.Join(",", listBox7.Items.Cast<String>());
+            //    coldongiasp = string.Join(",", listBox8.Items.Cast<String>());
+            //}
+
+            //HDmasp = colmasp;
+            //HDtensp = coltensp;
+            //HDsl = colslsp;
+            //HDloai = colloaisp;
+            //HDdonvi = coldvsp;
+            //HDdongia = coldongiasp;
+            ////---------------------------------------------------//
+            ////pass data form tt
+            //thanhtoan = txtthanhtoan.Text;
+            //var form2 = new BanHangTT(listBox1a.Items);
+            //huyhd();
+            //autoidHD(); // clear toan bo textbox.... và làm mới ID
+            //form2.Show();
+        }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
@@ -448,6 +561,36 @@ namespace quanlynhakho.Usercontrols
                 sum += Convert.ToDouble(dataGridView1.Rows[i].Cells[4].Value);
             }
             txttongcongtiensp.Text = sum.ToString("###,###,###,###");
+        }
+
+        private void txtmasp_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(txtSdtkh.Text))
+                {
+                    txttenkh.Clear();
+                }
+                else
+                {
+                    connect.Open();
+                    string sqlkh = "select * from KhachHang where SDT=" + int.Parse(txtSdtkh.Text);
+                    SqlCommand cmd = new SqlCommand(sqlkh, connect);
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        txttenkh.Text = (dr["TenKH"].ToString());
+                        //luu tru cho form TT
+                        TenKH = txttenkh.Text;
+                        SDT = txtSdtkh.Text;
+                    }
+                    connect.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

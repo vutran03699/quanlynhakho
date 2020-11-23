@@ -33,9 +33,9 @@
             this.tensp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soluongsp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dongiasp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thanhtiensp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dvsanpham = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loaisp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thanhtiensp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnthem = new System.Windows.Forms.Button();
             this.btnsua = new System.Windows.Forms.Button();
             this.btnxoa = new System.Windows.Forms.Button();
@@ -60,10 +60,12 @@
             this.txtmasp = new DevExpress.XtraEditors.TextEdit();
             this.txttiensp = new DevExpress.XtraEditors.TextEdit();
             this.txtdongiasp = new DevExpress.XtraEditors.TextEdit();
-            this.txtTenKH = new System.Windows.Forms.TextBox();
+            this.txttenkh = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtsoluongsp = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtSdtkh = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtsohd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtmasp.Properties)).BeginInit();
@@ -81,9 +83,9 @@
             this.tensp,
             this.soluongsp,
             this.dongiasp,
-            this.thanhtiensp,
             this.dvsanpham,
-            this.loaisp});
+            this.loaisp,
+            this.thanhtiensp});
             this.dataGridView1.Location = new System.Drawing.Point(7, 47);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -115,12 +117,6 @@
             this.dongiasp.Name = "dongiasp";
             this.dongiasp.ReadOnly = true;
             // 
-            // thanhtiensp
-            // 
-            this.thanhtiensp.HeaderText = "Thành Tiền";
-            this.thanhtiensp.Name = "thanhtiensp";
-            this.thanhtiensp.ReadOnly = true;
-            // 
             // dvsanpham
             // 
             this.dvsanpham.HeaderText = "Đơn Vị";
@@ -132,6 +128,12 @@
             this.loaisp.HeaderText = "Loại";
             this.loaisp.Name = "loaisp";
             this.loaisp.ReadOnly = true;
+            // 
+            // thanhtiensp
+            // 
+            this.thanhtiensp.HeaderText = "Thành Tiền";
+            this.thanhtiensp.Name = "thanhtiensp";
+            this.thanhtiensp.ReadOnly = true;
             // 
             // btnthem
             // 
@@ -335,6 +337,7 @@
             this.txtmasp.Name = "txtmasp";
             this.txtmasp.Size = new System.Drawing.Size(101, 20);
             this.txtmasp.TabIndex = 75;
+            this.txtmasp.TextChanged += new System.EventHandler(this.txtmasp_TextChanged);
             this.txtmasp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtmasp_KeyDown);
             // 
             // txttiensp
@@ -354,16 +357,16 @@
             this.txtdongiasp.Size = new System.Drawing.Size(136, 20);
             this.txtdongiasp.TabIndex = 78;
             // 
-            // txtTenKH
+            // txttenkh
             // 
-            this.txtTenKH.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txtTenKH.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtTenKH.Location = new System.Drawing.Point(136, 12);
-            this.txtTenKH.Name = "txtTenKH";
-            this.txtTenKH.Size = new System.Drawing.Size(184, 21);
-            this.txtTenKH.TabIndex = 83;
-            this.txtTenKH.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txttensp_KeyDown);
-            this.txtTenKH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttensp_KeyPress);
+            this.txttenkh.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txttenkh.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txttenkh.Location = new System.Drawing.Point(136, 12);
+            this.txttenkh.Name = "txttenkh";
+            this.txttenkh.Size = new System.Drawing.Size(184, 21);
+            this.txttenkh.TabIndex = 83;
+            this.txttenkh.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txttensp_KeyDown);
+            this.txttenkh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttensp_KeyPress);
             // 
             // label1
             // 
@@ -392,15 +395,37 @@
             this.label2.TabIndex = 64;
             this.label2.Text = "VND";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(417, 15);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(26, 13);
+            this.label5.TabIndex = 67;
+            this.label5.Text = "SDT";
+            // 
+            // txtSdtkh
+            // 
+            this.txtSdtkh.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtSdtkh.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtSdtkh.Location = new System.Drawing.Point(449, 12);
+            this.txtSdtkh.Name = "txtSdtkh";
+            this.txtSdtkh.Size = new System.Drawing.Size(184, 21);
+            this.txtSdtkh.TabIndex = 83;
+            this.txtSdtkh.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txttensp_KeyDown);
+            this.txtSdtkh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttensp_KeyPress);
+            // 
             // ucXuatKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.txtsoluongsp);
-            this.Controls.Add(this.txtTenKH);
+            this.Controls.Add(this.txtSdtkh);
+            this.Controls.Add(this.txttenkh);
             this.Controls.Add(this.txttensp);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBoxloaisp);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label19);
@@ -447,13 +472,6 @@
         private System.Windows.Forms.Button btnXuatKho;
         private System.Windows.Forms.Button btnhuyHD;
         private System.Windows.Forms.Button btnexit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn masp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tensp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn soluongsp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dongiasp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn thanhtiensp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dvsanpham;
-        private System.Windows.Forms.DataGridViewTextBoxColumn loaisp;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txttongcongtiensp;
@@ -471,9 +489,18 @@
         private DevExpress.XtraEditors.TextEdit txttiensp;
         private DevExpress.XtraEditors.TextEdit txtdongiasp;
         private System.Windows.Forms.TextBox txttensp;
-        private System.Windows.Forms.TextBox txtTenKH;
+        private System.Windows.Forms.TextBox txttenkh;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtsoluongsp;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtSdtkh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn masp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tensp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soluongsp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dongiasp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dvsanpham;
+        private System.Windows.Forms.DataGridViewTextBoxColumn loaisp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn thanhtiensp;
     }
 }

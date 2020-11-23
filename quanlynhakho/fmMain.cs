@@ -18,15 +18,32 @@ namespace quanlynhakho
 {
     public partial class fmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        private static XtraTabControl tabstatic;
-
-        public fmMain()
+        //private static XtraTabControl tabstatic;
+        private readonly fmMain _fmmain;
+        public fmMain(fmMain fmmain)
         {
+            _fmmain = fmmain;
             InitializeComponent();
-            autoloadThongKe();
+         //   autoloadThongKe();
          //   tabstatic = tabControl;
 
         }
+
+        //==================
+        //new HashMap to store pages, this is out of the function!  
+        //private void MoveTabPages(XtraTabControl sourceTabControl, XtraTabControl targetTabControl)
+        //{
+        //    foreach (XtraTabPage tabPage in sourceTabControl.TabPages)
+        //    {
+        //        XtraTabPage newPage = new XtraTabPage();
+        //        newPage.Text = tabPage.Text;
+        //        newPage.Controls.AddRange(tabPage.Controls.OfType<Control>().ToArray());
+        //        targetTabControl.TabPages.Add(newPage);
+        //    }
+        //}
+
+
+        //======
 
         //#region Kiểm tra TabPabPage có tồn tại không
         //public static bool KiemTraTabPage(string Ten)
@@ -56,18 +73,18 @@ namespace quanlynhakho
 
 
 
-        void autoloadThongKe()
-        {
-            //XtraTabControl tab = xtbc;
-            //XtraTabPage page = new XtraTabPage();
-            //tab.TabPages.Add(page);
-            //tab.SelectedTabPage = page;
-            ////Usercontrols.ucThongKe uc = new Usercontrols.ucThongKe();
-            //page.Controls.Add(uc);
-            //page.Text = "Thống kê";
-            //uc.Dock = DockStyle.Fill;
+        //void autoloadThongKe()
+        //{
+        //    //XtraTabControl tab = xtbc;
+        //    //XtraTabPage page = new XtraTabPage();
+        //    //tab.TabPages.Add(page);
+        //    //tab.SelectedTabPage = page;
+        //    ////Usercontrols.ucThongKe uc = new Usercontrols.ucThongKe();
+        //    //page.Controls.Add(uc);
+        //    //page.Text = "Thống kê";
+        //    //uc.Dock = DockStyle.Fill;
             
-        }
+        //}
         
         //private bool ExitFrom(XtraForm from)
         //{
@@ -103,8 +120,10 @@ namespace quanlynhakho
             page.Controls.Add(uc);
             page.Text = "Nhập Kho";
             uc.Dock = DockStyle.Fill;
+          //  _fmmain.ucNhapKho.SelectedTabPage = _fmmain.ucNhapKho;
             //ucNhapKho.SelectedTabPageIndex = 0;
-            page.PageVisible = !page.PageVisible;
+            // page.PageVisible = !page.PageVisible;
+
         }
 
         private void btnTest_ItemClick(object sender, ItemClickEventArgs e)

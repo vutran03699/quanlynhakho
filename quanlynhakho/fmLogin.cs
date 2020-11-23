@@ -16,14 +16,18 @@ namespace quanlynhakho
     {
         public static string usernv = "";
         SqlConnection connect = ClassKetNoi.connect;
+        private fmMain fmmain;
+
         public fmLogin()
         {
             InitializeComponent();
           
         }
-      
 
-    
+
+
+
+
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             //string Username = txtTaiKhoan.Text;
@@ -42,7 +46,8 @@ namespace quanlynhakho
             sqldata.Fill(datatb1);
             if (datatb1.Rows.Count == 1)
             {
-                fmMain f = new fmMain();
+                
+                fmMain f = new fmMain(fmmain);
                 this.Hide();
                 f.Show();
             }
